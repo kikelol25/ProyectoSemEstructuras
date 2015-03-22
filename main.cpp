@@ -21,7 +21,7 @@
 using namespace std;
 
 int main() {
-  cout << "Coming soon..." << endl;
+  cout << "Coming soon...";
   cin.get();
   return 0;
 }
