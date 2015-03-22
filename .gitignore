@@ -11,8 +11,7 @@
 
 
 ### C++ ###
-!/build
-/build/*
+build/
 # Compiled Object files
 *.slo
 *.lo
