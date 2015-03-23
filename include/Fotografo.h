@@ -11,6 +11,7 @@
 class Fotografo {
 public:
   Fotografo();
+  Fotografo(std::string, std::string, std::string, int, int);
   ~Fotografo();
   std::string getName() { return name; }
   std::string getCity() { return city; }

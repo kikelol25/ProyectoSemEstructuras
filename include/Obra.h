@@ -11,6 +11,8 @@
 class Obra {
 public:
   Obra();
+  Obra(std::string, std::string, std::string, std::string, int, int, \
+      bool, bool, bool, std::string, std::string, float);
   ~Obra();
   std::string getName() { return name; }
   std::string getCamera() { return camera; }
