@@ -75,9 +75,10 @@ template<class T>
 List<T>::~List() {
   deleteAll();
 }
+
 template<class T>
 bool List<T>::isEmpty() {
-  return anchor = nullptr;
+  return anchor == nullptr;
 }
 
 template<class T>

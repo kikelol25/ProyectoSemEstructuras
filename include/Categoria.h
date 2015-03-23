@@ -12,11 +12,11 @@ class Categoria {
 public:
   Categoria();
   ~Categoria();
-  std::string get_name() { return name; }
-  int get_elements() { return elements; }
+  std::string getName() { return name; }
+  int getElements() { return elements; }
 
-  void set_name(std::string val) { name = val; }
-  void set_elements(int val) { elements = val; }
+  void setName(std::string val) { name = val; }
+  void setElements(int val) { elements = val; }
 private:
   std::string name;
   int elements;
