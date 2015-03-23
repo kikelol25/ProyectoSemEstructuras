@@ -19,6 +19,7 @@ public:
 
 private:
   Node *next;
+  Node *prev;
   T data;
 
   T getData();
@@ -27,6 +28,9 @@ private:
   Node* getNext();
   void setNext(Node*);
 
+  Node* getPrev();
+  void setPrev(Node*);
+
 };
 
 // Constructor por defecto
@@ -34,6 +38,7 @@ template<class T>
 Node<T>::Node() {
   data = nullptr;
   next = nullptr;
+  prev = nullptr;
 }
 
 // Constructor por parámetro
@@ -41,6 +46,7 @@ template<class T>
 Node<T>::Node(T data_) {
   data = data_;
   next = nullptr;
+  prev = nullptr;
 }
 
 template<class T>
@@ -54,6 +60,11 @@ Node<T>* Node<T>::getNext() {
 }
 
 template<class T>
+Node<T>* Node<T>::getPrev() {
+  return prev;
+}
+
+template<class T>
 void Node<T>::setData(T data_) {
   data = data_;
 }
@@ -61,6 +72,11 @@ void Node<T>::setData(T data_) {
 template<class T>
 void Node<T>::setNext(Node* next_) {
   next = next_;
+}
+
+template<class T>
+void Node<T>::setPrev(Node* prev_) {
+  prev = prev_;
 }
 
 template<class T>

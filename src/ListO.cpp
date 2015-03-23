@@ -4,10 +4,10 @@
 * Seccion: D01
 */
 
-#include "ListF.h"
+#include "ListO.h"
 
-bool ListF::isAvalidPos(Node<Fotografo>* p) {
-  Node<Fotografo>* aux = anchor;
+bool ListO::isAvalidPos(Node<Obra>* p) {
+  Node<Obra>* aux = anchor;
 
   while (aux != nullptr) {
     if (aux == p) {
@@ -20,24 +20,24 @@ bool ListF::isAvalidPos(Node<Fotografo>* p) {
 
 ////////////////////////////////////////////
 
-ListF::ListF() {
+ListO::ListO() {
   anchor = nullptr;
 }
 
-ListF::~ListF() {
+ListO::~ListO() {
   deleteAll();
 }
 
-bool ListF::isEmpty() {
+bool ListO::isEmpty() {
   return anchor == nullptr;
 }
 
-void ListF::insertData(Node<Fotografo>* p, Fotografo& e) {
+void ListO::insertData(Node<Obra>* p, Obra& e) {
   if (p != nullptr and !isAvalidPos(p)) {
     throw ListException ("Posicion invalida al insertar");
   }
 
-  Node<Fotografo>* aux = new Node<Fotografo> (e);
+  Node<Obra>* aux = new Node<Obra> (e);
   if (aux == nullptr) {
     throw ListException("Memoria insufuciente al insertar");
 
@@ -51,7 +51,7 @@ void ListF::insertData(Node<Fotografo>* p, Fotografo& e) {
   }
 }
 
-void ListF::deleteData(Node<Fotografo>* p) {
+void ListO::deleteData(Node<Obra>* p) {
   if (!isValidPos(p)) {
     throw ListException("Posicion es invalida al eliminar");
   }
@@ -64,16 +64,16 @@ void ListF::deleteData(Node<Fotografo>* p) {
   delete p;
 }
 
-Node<Fotografo>* ListF::firstPos() {
+Node<Obra>* ListO::firstPos() {
   return anchor;
 }
 
-Node<Fotografo>* ListF::lastPos() {
+Node<Obra>* ListO::lastPos() {
   if (isEmpty()) {
     return nullptr;
   }
 
-  Node<Fotografo>* aux = anchor;
+  Node<Obra>* aux = anchor;
   while (aux->getNext() != nullptr) {
     aux = aux->getNext();
   }
@@ -81,8 +81,8 @@ Node<Fotografo>* ListF::lastPos() {
   return aux;
 }
 
-Node<Fotografo>* ListF::previousPos(Node<Fotografo>* p) {
-  Node<Fotografo>* aux = anchor;
+Node<Obra>* ListO::previousPos(Node<Obra>* p) {
+  Node<Obra>* aux = anchor;
 
   while (aux != nullptr and aux->getNext() != p) {
     aux = aux->getNext();
@@ -91,15 +91,15 @@ Node<Fotografo>* ListF::previousPos(Node<Fotografo>* p) {
   return aux;
 }
 
-Node<Fotografo>* ListF::nextPos(Node<Fotografo>* p) {
+Node<Obra>* ListO::nextPos(Node<Obra>* p) {
   if (!isAvalidPos(p)) {
     return nullptr;
   }
   return p->getNext();
 }
 
-Node<Fotografo>* ListF::findData(Fotografo e) {
-  Node<Fotografo>* aux = anchor;
+Node<Obra>* ListO::findData(Obra e) {
+  Node<Obra>* aux = anchor;
 
   while (aux != nullptr and aux->data != e) {
     aux = aux->getNext();
@@ -108,7 +108,7 @@ Node<Fotografo>* ListF::findData(Fotografo e) {
   return aux;
 }
 
-Fotografo ListF::retrieve(Node<Fotografo>* p) {
+Obra ListO::retrieve(Node<Obra>* p) {
   if (!isAvalidPos(p)) {
     throw ListException("Error!, Posicion invalida");
   }
@@ -116,8 +116,8 @@ Fotografo ListF::retrieve(Node<Fotografo>* p) {
   return p->getData();
 }
 
-void ListF::print() {
-  Node<Fotografo>* aux = anchor;
+void ListO::print() {
+  Node<Obra>* aux = anchor;
 
   while (aux != nullptr) {
     cout << aux->getData() << endl;
@@ -126,8 +126,8 @@ void ListF::print() {
 
 }
 
-void ListF::deleteAll() {
-  Node<Fotografo>* aux;
+void ListO::deleteAll() {
+  Node<Obra>* aux;
 
   while (anchor != nullptr) {
     aux = anchor;

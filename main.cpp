@@ -17,6 +17,7 @@
 #include "include/Categoria.h"
 #include "include/Node.h"
 #include "include/ListF.h"
+#include "include/ListO.h"
 
 using namespace std;
 
