@@ -3,7 +3,7 @@
 * Codigo: 214519467
 * Seccion: D01
 */
-#include "Categoria.h"
+#include "../include/Categoria.h"
 
 Categoria::Categoria()
 {
